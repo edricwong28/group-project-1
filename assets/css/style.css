@@ -4,3 +4,11 @@
 	border-width: 2px;
 	border-color: blue;
 }
+
+#signup{
+	float: right;
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+	clear: both;
+}

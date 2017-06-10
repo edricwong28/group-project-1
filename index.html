@@ -1,68 +1,96 @@
 <!DOCTYPE html>
-<html>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
-	<head>
-		<title>Netflix and Avoid Humans</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Netflix and Avoid Humans</h1>
-			</div>
-			   <div class="panel panel-default">
-					<table class="table">
-  						<div class="panel-heading">Panel heading without title</div>
-							<thead> 
-								<tr> 
-									<th></th> 
-									<th></th> 
-									<th></th> 
-									<th></th> 
-									<th></th>  
-									<th></th> 
-									<th></th> 
-								</tr> 
-							</thead> 
-								<tbody id="#table"> 
-									<tr><th scope="row">1</th> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> 
-									<tr><th scope="row">2</th> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-									<tr><th scope="row">3</th> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> 
-								</tbody>
-					</table>
-				</div>
-					
-			  	
-		<div class="panel panel-default">
-			<div class="panel-heading">Panel heading without title</div>
-				<div class="panel-body">
-				<div class="form-group row">
-					<label for="example-text-input" class="col-2 col-form-label">Mood/label>
-					<div class="col-10">
-						<input size="10" class="form-control" type="text" value="" id="name-input">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="example-search-input" class="col-2 col-form-label">Location</label>
-					<div class="col-10">
-						<input size="10" class="form-control" maxtype="search" value="" id="role-input">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="example-email-input" class="col-2 col-form-label">Start Date (MM/DD/YY)</label>
-					<div class="col-10">
-						<input size="10" class="form-control" type="email" value="" id="start-input"> 	
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="example-url-input" class="col-2 col-form-label">Monthly Rate</label>
-					<div class="col-10">
-						<input size="10" class="form-control"  type="url" value="" id="rate-input">
-					</div>
-					</div>
-			</div>
-		</div>
-	</div>
-</body>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Netlix and Avoid Humans</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Employee Tracker -->
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: black; color: white">
+        <h1 class="text-center">Netlix and Avoid Humans</h1>
+        <h3 class="text-center">example</h3>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-12">
+
+        <!-- Current Employees-->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Results</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='employee-table'>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add Employee  -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Add Data</strong></h3>
+            </div>
+            <div class="panel-body">
+
+              <!-- Entry Form -->
+              <form>
+                <div class="form-group">
+                  <label for="employee-name-input">Location</label>
+                  <input class="form-control" id="employee-name-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="role-input">Mood</label>
+                  <input class="form-control" id="role-input" type="text">
+                <button class="btn btn-primary" id="add-employee-btn" type="submit">Submit</button>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+  </body>
+
 </html>
-<script src="script.js"></script>

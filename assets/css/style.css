@@ -3,12 +3,9 @@
 	border-style: solid;
 	border-width: 2px;
 	border-color: blue;
+	z-index: 0;
 }
 
-#signup{
-	float: right;
-	border-style: solid;
-	border-width: 2px;
-	border-color: blue;
+#header{
 	clear: both;
 }

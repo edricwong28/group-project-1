@@ -87,9 +87,19 @@
                 </div>
                 <div class="form-group">
                   <label for="role-input">Mood</label>
-                  <input class="form-control" id="role-input" type="text">
+                  <input class="form-control" id="role-input" type="text" name="mood" list="moodtype">
+                  <datalist id="moodtype">
+					  <option value="Happy">
+					  <option value="Sad">
+					  <option value="Hungry">
+					  <option value="Social">
+					  <option value="h">
+					  <option value="Sad">
+				  </datalist>
                   <br>
                 <button class="btn btn-primary" id="add-employee-btn" type="submit">Submit</button>
+
+
               </form>
 
             </div>

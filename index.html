@@ -1,21 +1,25 @@
 <!DOCTYPE html>
   <head>
 
-    <title>Netflix and Avoid Humans</title>
+    <title>Netflix Roulette</title>
 
-    <html lang="en-us">
+  <html lang="en-us">
 	<meta charset="UTF-8">
 	<link href="reset.css">
-	<link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    <!-- Materialize -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
-    <!-- JQuery -->
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!-- JQuery -->
+    
+   <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
@@ -26,94 +30,155 @@
 
   </head>
 
-  <body>
+  <container>
 
-    <!-- Employee Tracker -->
-    <div class="container">
+   <h5 id="logo1">Netflix Roulette</h5>
+   <a class="waves-effect waves-light btn" id="sign-in" href="#modal1">Sign-In</a>
 
-      <!-- Jumbotron -->
-        <div class="row">
-         <div class="col-lg-12">
-          <div class="jumbotron" style="background-color: darkred; color: white">
-          <button id="signup">Signup</button>
-           <button id="login">Login</button>
-           
-     
-           <h1 id ="header" class="text-center">Netflix and Avoid Humans</h1>
-           
-           <h3 class="text-center">Sub-Heading Example</h3>
-            
+   <br><br><br><br><br><br><br><br><br><br>
 
-          </div>
-         </div>
-       </div>
+        <div id="holder">
+        <div class="text">
 
-  <!--     <div class="row">
+         <h1>Shows for You!</h1>
+        
+         <h5>Match movies and shows according to the weather and your mood.</h5>
 
-        <div class="col-lg-12"> -->
-
-        <!-- Current Employees-->
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong>Results</strong></h3>
-            </div>
-            <div class="panel-body">
-              <table class="table table-hover" id='employee-table'>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Add Employee  -->
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong>Add Data</strong></h3>
-            </div>
-            <div class="panel-body">
-
-              <!-- Entry Form -->
-              <form>
-                <div class="form-group">
-                  <label for="employee-name-input">Location</label>
-                  <input class="form-control" id="location-input" type="text">
-                </div>
-                <div class="form-group">
-                  <label for="role-input">Mood</label>
-                  <input class="form-control" id="mood-input" type="text" name="mood" list="moodtype">
-                  <datalist id="moodtype">
-					  <option value="Happy">
-					  <option value="Sad">
-					  <option value="Hungry">
-					  <option value="Social">
-					  <option value="h">
-					  <option value="Sad">
-				  </datalist>
-                  <br>
-                <button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
-
-
-              </form>
-
-            </div>
-
-          </div>
-
-        </div>
+         <p>New User? Sign up below!</p>
 
       </div>
 
-    </div>
+         <a class="waves-effect waves-light btn" id="sign-up" href="#modal1">Sign-Up</a>
+      </div>
+
+          <div id="modal1" class="modal">
+	          <div class="modal-content">
+	            <h4>Modal Header</h4>
+	            <p>A bunch of text</p>
+	          </div>
+	          <div class="modal-footer">
+	            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+	          </div>
+         </div>
+    
+            <div class="parallax-container">
+		      <div class="parallax"><img src="images/parallax1.jpg"></div>
+		    </div>
+
+
+           <div class="section white" id="section-white">
+            <div class="row container">
+              <h2 class="header"></h2>
+
+             <body>
+
+			      <nav class="nav-extended">
+			        <div class="nav-wrapper">
+			        <br>
+			          <a href="#" class="brand-logo center"><h1>Netflix Roulette</h1></a>
+			          <ul id="nav-mobile" class="left hide-on-med-and-down">
+			            <li><a href="sass.html"></a></li>
+			            <li><a href="badges.html"></a></li>
+			            <li><a href="collapsible.html"></a></li>
+			          </ul>
+			        </div>
+			      </nav>
+
+		        <!-- Results-->
+		          <div class="panel panel-primary">
+		          <br>
+		            <div class="panel-heading">
+		              <h3 class="panel-title"  id="results"><strong>Results</strong></h3>
+		            </div>
+		              <div class="carousel">
+		              <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/250/250/nature/1"></a>
+		              <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/250/250/nature/2"></a>
+		              <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/250/250/nature/3"></a>
+		              <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/250/250/nature/4"></a>
+		              <a class="carousel-item" href="#five!"><img src="http://lorempixel.com/250/250/nature/5"></a>
+		            </div>
+          		</div>
+
+    
+              <!-- Entry Form -->
+			      <section id="section" class="container">
+			                 <div class="input-field" id="zip">
+			                      <div class="row">
+			                        <form class="col s12">
+			                          <div class="row">
+			                            <div class="input-field col s12">
+			                              <textarea id="textarea1" class="materialize-textarea"></textarea>
+			                              <label for="textarea1">Enter City/Zip</label>
+			                            </div>
+			                          </div>
+			                        </form>
+			                      </div>
+			                  </div>  
+			           
+
+            <br>
+
+                  <div class="input-field col s12">
+                    <select multiple>
+                      <option value="" disabled selected>Select Mood...</option>
+                      <option value="1">Happy</option>
+                      <option value="2">Sad</option>
+                      <option value="3">Excited</option>
+                      <option value="4">Calm</option>
+                      <option value="5">Lonley</option>
+                      <option value="6">Confident</option>
+                    </select>
+                    <label id="label">Choose Mood</label>
+                  </div>
+                 
+                 
+
+            <br>
+
+             <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                  
+       </section>
+             
+ 
+
+    <!-- JavaScript -->
+    <script src="assets/javascript/script.js"></script>
+
+  </container>
+
+
+            </div>
+          </div>
+         <div class="parallax-container">
+           <div class="parallax"><img src="images/parallax2.jpg"></div>
+      </div>
+
+              <footer class="page-footer" id="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
 
     <!-- JavaScript -->
     <script src="assets/javascript/script.js"></script>

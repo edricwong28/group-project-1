@@ -107,3 +107,20 @@
       console.log(error);
     });
   }
+
+//ADDING SCRIPTS FOR MATERIALZIE BEHAVIOR
+//_______________________________________________________________________________________________________________________________
+
+  $(document).ready(function(){
+      $('.carousel').carousel();
+  });
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
+  $('select').material_select('destroy');
+
+  $(document).ready(function(){
+      $('.parallax').parallax();
+  });

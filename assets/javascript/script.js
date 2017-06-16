@@ -1,3 +1,13 @@
+ // MATERIALIZE SCRIPTS
+ //______________________________________________________________________________________________________________________________
+  $(document).ready(function(){
+      $('.parallax').parallax();
+      Materialize.updateTextFields();
+      $('select').material_select();
+      $('.carousel').carousel({dist:0});
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+      // $('select').material_select('destroy');
+  });
 
 
   // Initialize Firebase

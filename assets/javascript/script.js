@@ -6,8 +6,10 @@
       $('select').material_select();
       $('.carousel').carousel({dist:0});
       $('.carousel.carousel-slider').carousel({fullWidth: true});
+      $('.slider').slider();        
       // $('select').material_select('destroy');
   });
+
 
 
   // Initialize Firebase

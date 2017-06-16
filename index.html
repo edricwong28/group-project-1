@@ -3,92 +3,102 @@
 
     <title>Netflix Roulette</title>
 
-  <html lang="en-us">
+    <html lang="en-us">
 	<meta charset="UTF-8">
 	<link href="reset.css">
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <!-- Bootstrap -->
-   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
-    <!-- Materialize -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="assets/javascript/script.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <!-- JQuery -->
+   <!--  GOOGLE FONTS -->
+   
+    <link href=“https://fonts.googleapis.com/css?family=Quantico:700” rel=“stylesheet”>
     
-   <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-
-    <!-- Moment.js Reference -->
-    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
   </head>
 
-  <container>
+   <body>
+       <nav class="nav-extended2">
+     <div class="nav-wrapper">
+     		<br>
+		   <h5 id="logo1"><b>NETFLIX ROULETTE</b></h5>
 
-   <h5 id="logo1">Netflix Roulette</h5>
-   <a class="waves-effect waves-light btn" id="sign-in" href="#modal1">Sign-In</a>
+		   <a class="waves-effect waves-light btn" id="sign-in" href="#modal1">Sign-In</a>
+				<br>
+	         <div class="text" id="holder">
+		         <h2><b>Shows for You!</b></h2>
+		         <h5>Match movies and shows according to the weather and your mood.</h5>
+		         <br>
+		         <h6>New User? Sign up below!</h6>
+	         
 
-   <br><br><br><br><br><br><br><br><br><br>
+		      <div>
+		         <a class="waves-effect waves-light btn" id="sign-up" href="#modal1">Sign-Up</a>
+		      </div>
+		  </div>
+		 </div>
+	</nav>
 
-        <div id="holder">
-        <div class="text">
+<br>
 
-         <h1>Shows for You!</h1>
-        
-         <h5>Match movies and shows according to the weather and your mood.</h5>
 
-         <p>New User? Sign up below!</p>
+		     <div class="carousel carousel-slider center" data-indicators="true">
+		    <div class="carousel-fixed-item center">
+		      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+		    </div>
+		    <div class="carousel-item red white-text" href="#one!">
+		      <h2>First Panel</h2>
+		      <p class="white-text">This is your first panel</p>
+		    </div>
+		    <div class="carousel-item amber white-text" href="#two!">
+		      <h2>Second Panel</h2>
+		      <p class="white-text">This is your second panel</p>
+		    </div>
+		    <div class="carousel-item green white-text" href="#three!">
+		      <h2>Third Panel</h2>
+		      <p class="white-text">This is your third panel</p>
+		    </div>
+		    <div class="carousel-item blue white-text" href="#four!">
+		      <h2>Fourth Panel</h2>
+		      <p class="white-text">This is your fourth panel</p>
+		    </div>
+		  </div>
 
-      </div>
 
-         <a class="waves-effect waves-light btn" id="sign-up" href="#modal1">Sign-Up</a>
-      </div>
+		      <br>
 
-          <div id="modal1" class="modal">
-	          <div class="modal-content">
-	            <h4>Modal Header</h4>
-	            <p>A bunch of text</p>
-	          </div>
-	          <div class="modal-footer">
-	            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-	          </div>
-         </div>
-    
+	        <!--   <div id="modal1" class="modal">
+		          <div class="modal-content">
+		            <h4>Modal Header</h4>
+		            <p>A bunch of text</p>
+		          </div>
+			       <div class="modal-footer">
+			         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+			       </div>
+	           </div>
+	            -->
+    		
+    		<!-- FIRST PARALLAX IMAGE -->
             <div class="parallax-container">
-		      <div class="parallax"><img src="images/parallax1.jpg"></div>
+		      <div class="parallax"><img src="netflixBackground.jpg"></div>
 		    </div>
 
+	
+	          <div class="section white" id="container">
+	    		<div class="row container">
 
-           <div class="section white" id="section-white">
-            <div class="row container">
-              <h2 class="header"></h2>
-
-             <body>
-
-			      <nav class="nav-extended">
-			        <div class="nav-wrapper">
-			        <br>
-			          <a href="#" class="brand-logo center"><h1>Netflix Roulette</h1></a>
-			          <ul id="nav-mobile" class="left hide-on-med-and-down">
-			            <li><a href="sass.html"></a></li>
-			            <li><a href="badges.html"></a></li>
-			            <li><a href="collapsible.html"></a></li>
-			          </ul>
-			        </div>
-			      </nav>
+				<h1 id="picks">Your Picks</h1>
 
 		        <!-- Results-->
 		          <div class="panel panel-primary">
 		          <br>
 		            <div class="panel-heading">
-		              <h3 class="panel-title"  id="results"><strong>Results</strong></h3>
+
 		            </div>
 		              <div class="carousel">
 		              <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/250/250/nature/1"></a>
@@ -101,14 +111,14 @@
 
     
               <!-- Entry Form -->
-			      <section id="section" class="container">
-			                 <div class="input-field" id="zip">
+			  <section id="section" class="container">
+			                 <div class="input-field" id="city">
 			                      <div class="row">
 			                        <form class="col s12">
 			                          <div class="row">
 			                            <div class="input-field col s12">
-			                              <textarea id="textarea1" class="materialize-textarea"></textarea>
-			                              <label for="textarea1">Enter City/Zip</label>
+			                              <textarea id="city" class="materialize-textarea"></textarea>
+			                              <label for="city">Enter City</label>
 			                            </div>
 			                          </div>
 			                        </form>
@@ -118,9 +128,26 @@
 
             <br>
 
-                  <div class="input-field col s12">
-                    <select multiple>
-                      <option value="" disabled selected>Select Mood...</option>
+            			  <section id="section" class="container">
+			                 <div class="input-field" id="state">
+			                      <div class="row">
+			                        <form class="col s12">
+			                          <div class="row">
+			                            <div class="input-field col s12">
+			                              <textarea id="state" class="materialize-textarea"></textarea>
+			                              <label for="state">Enter State</label>
+			                            </div>
+			                          </div>
+			                        </form>
+			                      </div>
+			                  </div>  
+			           
+
+            <br>
+
+                  <!-- <div class="input-field col s12"> -->
+                    <select>
+                      <option style="color: white" value="" disabled selected>Select Mood...</option>
                       <option value="1">Happy</option>
                       <option value="2">Sad</option>
                       <option value="3">Excited</option>
@@ -128,8 +155,8 @@
                       <option value="5">Lonley</option>
                       <option value="6">Confident</option>
                     </select>
-                    <label id="label">Choose Mood</label>
-                  </div>
+                    <label>Choose Mood</label>
+                   <!--</div> -->
                  
                  
 
@@ -138,22 +165,53 @@
              <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
                   
        </section>
-             
- 
-
-    <!-- JavaScript -->
-    <script src="assets/javascript/script.js"></script>
-
-  </container>
-
-
-            </div>
           </div>
-         <div class="parallax-container">
-           <div class="parallax"><img src="images/parallax2.jpg"></div>
-      </div>
+         </div>
+        
 
-              <footer class="page-footer" id="page-footer">
+			<!-- SECOND PARALLAX IMAGE -->
+         <div class="parallax-container">
+           <div class="parallax"><img src="netflixBackground.jpg"></div>
+         </div>
+
+         <br>
+		
+		<container>
+			<div class="sign-up2">
+				<h3>Sign-Up</h3>
+			</div>
+			<div class="row">
+		    <form class="col s12">
+		      <div class="row">
+		        <div class="input-field col s6">
+		          <input placeholder="First Name" id="first_name" type="text" class="validate" required>
+		          <label for="first_name">First Name</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input placeholder="Last Name" id="last_name" type="text" class="validate" required>
+		          <label for="last_name">Last Name</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="password" type="password" class="validate" required>
+		          <label for="password">Password</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="email" type="email" class="validate" pattern=".{5,10}" required title="Password must be between 5 and 10 characters">
+		          <label for="email">Email</label>
+		        </div>
+		        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+		      </div>
+		      </div>
+		    </form>
+		  </div>
+		 </container> 
+	
+		<!-- FOOTER -->
+         <footer class="page-footer" id="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">

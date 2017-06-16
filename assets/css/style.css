@@ -24,6 +24,10 @@
 	z-index: 0;
 }
 
+#slider{
+	height: 450px;
+}
+
 #page-footer{
 	background-color: darkred;
 }
@@ -39,6 +43,10 @@
 	margin-left: -12px;
 }
 
+#shows{
+	font-family: ‘PT Sans’, sans-serif;
+}
+
 #signup{
 	float: left;
 	border-style: solid;
@@ -48,6 +56,10 @@
 
 #header{
 	clear: both;
+}
+
+.slider{
+	background-color: black;
 }
 
 nav.nav-extended{
@@ -62,12 +74,17 @@ nav.nav-extended2{
 	margin-top: -40px;
 }
 
+.form{
+	background-color: grey;
+}
+
 #title{
 	text-align: center;
 	position: relative;
 }
 
 #picks{
+	font-family: ‘Fjalla One’, sans-serif;
 	text-align: center;
 	color: white;
 }

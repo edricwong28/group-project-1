@@ -1,6 +1,6 @@
-body {
+/*body {
     background: url("netflixBackground.jpg");
-}
+}*/
 
 #sign-in{
 	float: right;
@@ -9,6 +9,13 @@ body {
 	margin-top: -40px;
 }
 
+.sign-up2{
+	margin-left: 30px;
+}
+
+#container{
+	background-color: black;
+}
 #login{
 	float: right;
 	border-style: solid;
@@ -21,12 +28,10 @@ body {
 	background-color: darkred;
 }
 
-#section-white{
-	background-color: grey;
-}
+#section-white{}
 
  .parallax-container {
-      height: 540px;
+      height: 520px;
  }
 
 #label{
@@ -35,7 +40,7 @@ body {
 }
 
 #signup{
-	float: right;
+	float: left;
 	border-style: solid;
 	border-width: 2px;
 	border-color: blue;
@@ -51,18 +56,22 @@ nav.nav-extended{
 	margin-top: 0px;
 }
 
+nav.nav-extended2{
+	height: 550px;
+	background-color: darkred;
+	margin-top: -40px;
+}
+
 #title{
 	text-align: center;
 	position: relative;
 }
 
-#results{
+#picks{
 	text-align: center;
+	color: white;
 }
 
-#section{
-	padding-bottom: 50px;
-}
 
 #button1{
 	float: left;
@@ -79,13 +88,18 @@ nav.nav-extended{
 }
 
 #logo1{
-	font-family: 'Revalia', cursive;
+	font-family: ‘Quantico’, sans-serif;
 	color: red;
-	font-size: 24pt;
-	margin-left: 30px;
-	margin-top: 60px;
+	font-size: 70px;
+	margin-left: 20px;
+	margin-top: 0px;
 }
 
 #holder{
-		margin-left: 30px;
+		margin-left: 20px;
+		position: relative;
+}
+
+.carousel{
+	position: relative;
 }

@@ -49,7 +49,9 @@
       $("#keyword").val("");
       $("#actor").val("");
 
-  getflix();    
+  getflix();
+
+  
 
   });
 
@@ -96,37 +98,56 @@
  
    //MULTIPLE AJAX CALLS METHOD
    $.when(getWeather, getNetflix).done(function(r1, r2) {
-      r1 = r1[0];
-      //r2[0] is pointing to the "parent" object, which holds mulipltle objects
-      r2 = r2[0];
+
+       r1 = r1[0];
+      //r2[0] is pointing to the "parent" array, which holds mulipltle objects
+       r2 = r2[0];
       $(".city").html(r1.name);
       $(".temp").html(r1.main.temp);
       $(".main").html(r1.weather[0].main);
       $(".description").html(r1.weather[0].description);
       $(".icon").html(r1.weather[0].icon);
       
-      $(".show").append(r2[0].show_title);
-      $(".show").append(r2[1].show_title);
-      $(".show").append(r2[2].show_title);
-      $(".show").append(r2[3].show_title);
-      $(".show").append(r2[4].show_title);
+      // $(".show").append(r2[0].show_title);
+      // $(".show").append(r2[1].show_title);
+      // $(".show").append(r2[2].show_title);
+      // $(".show").append(r2[3].show_title);
+      // $(".show").append(r2[4].show_title);
 
       console.log(r1.main.temp);
       console.log(r1.weather[0].main);
       console.log(r1.weather[0].description);
       console.log(r1.weather[0].icon);
 
-      console.log(r1[0]);
+      console.log(r1);
       console.log(r2[0]);
+      console.log(r2);
 
       console.log("TESTING!!!!");
- });
-}
+      console.log(r2[1].category);
 
 
-   // function getNetflix(){
-   //  
-   // }
+         
+          for(i=0; i < r2.length; i++){
+           if(r1.weather[0].main == "Clear" && r2[i].category == "Dramas"){
+
+            var results = document.getElementById("results")
+            var newDiv = document.createElement("div")
+
+            newDiv.innerHTML = r2[i].show_title;
+            results.appendChild(newDiv);
+
+             
+             console.log(r2[i].show_title);
+           }
+          }
+       
+         
+
+
+     });
+    }
+
 
   // // Initialize Firebase
   // var config = {

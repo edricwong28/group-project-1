@@ -69,7 +69,7 @@ nav.nav-extended{
 }
 
 nav.nav-extended2{
-	height: 550px;
+	height: 170px;
 	background-color: darkred;
 	margin-top: -40px;
 }
@@ -104,6 +104,11 @@ nav.nav-extended2{
 	color: white;
 }
 
+.carousel-item-custom {
+	width: calc(100vw/5) !important;
+	height: calc(100vw/5) !important;
+}
+
 #logo1{
 	font-family: ‘Quantico’, sans-serif;
 	color: red;
@@ -118,5 +123,11 @@ nav.nav-extended2{
 }
 
 .carousel{
+ position: relative;
+ width: 100%;
+}
+
+div.carousel.initialized{
 	position: relative;
+	width: 100%;
 }

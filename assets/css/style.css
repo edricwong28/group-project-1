@@ -108,6 +108,10 @@ nav.nav-extended2{
 	color: white;
 }
 
+#main-carousel{
+	
+}
+
 .carousel-item-custom {
 	width: calc(100vw/5) !important;
 	height: calc(100vw/5) !important;

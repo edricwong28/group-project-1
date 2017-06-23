@@ -22,7 +22,7 @@
    console.log(error.code);
    console.log(error.message);
   })
-});
+};
 
 
   

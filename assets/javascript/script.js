@@ -17,24 +17,20 @@
   
   //when SUBMIT is clicked, save inputs into variables
   $("#submitbtn").click(function(event){
-    // handles the sign in button press
-  function signIn () {
-    if (firebase.auth().currentUser) {
+   
+    var email = $("#email").val().trim();
+    var password = $("#password").val().trim();
+    var city = $("#city").val().trim();
+    var keyword = $("#keyword").val().trim();
+    var actor = $("#actor").val().trim();
 
-      firebase.auth().signOut();
-    } else {
-      var email = $("#email").val().trim();
-      var password = $("#password").val().trim();
-      if (email.length < 4) {
-        alert("Please enter an email address. ");
-        return;
-      }
-      if (password.length < 4) {
-        alert("Please enter a password. ");
-        return;
-      }
-
-      //sign in with email and password
+    console.log(email);
+    console.log(password);
+    console.log(city);
+    console.log(keyword);
+    console.log(actor);
+    
+    //sign in with email and password
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 
         //handle errors here
@@ -110,19 +106,6 @@
       console.log(error);
     });
   }
-
-
-    var email = $("#email").val().trim();
-    var password = $("#password").val().trim();
-    var city = $("#city").val().trim();
-    var keyword = $("#keyword").val().trim();
-    var actor = $("#actor").val().trim();
-
-    console.log(email);
-    console.log(password);
-    console.log(city);
-    console.log(keyword);
-    console.log(actor);
 
     // create "temporary" object for holding user's data
     newObject = {

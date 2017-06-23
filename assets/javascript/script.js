@@ -14,10 +14,11 @@
   var database = firebase.database();
 
   var email = "myemail@email.com";
-  var password = "12345";
+  var password = "1234567";
   
   function login(email, password){
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
    console.log(error.code);
    console.log(error.message);
   }

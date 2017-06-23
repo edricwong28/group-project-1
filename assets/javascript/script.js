@@ -73,7 +73,7 @@
 
       var key = "819174faa3fc447084b0d2c6d4bf1418";
       //WEATHER DATA WILL USE CITY INPUT FROM FIREBASE OBJECT
-      var URL = "https://api.openweathermap.org/data/2.5/weather?q=" + newObject.city + "&APPID=" + key;
+      var URL = "http://api.openweathermap.org/data/2.5/weather?q=" + newObject.city + "&APPID=" + key;
    
       var netflixURL = "https://netflixroulette.net/api/api.php?" + "actor=" + newObject.actor;
      

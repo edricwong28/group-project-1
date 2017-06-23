@@ -12,15 +12,17 @@
   firebase.initializeApp(config);
 
   var database = firebase.database();
-
-  var email = "myemail@email.com";
-  var password = "1234567";
   
   function login(email, password){
   
+    var email = $("#email").val().trim();
+    var password = $("#password").val().trim();
+   
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-   console.log(error.code);
-   console.log(error.message);
+   // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorMessage);
   })
 };
 
@@ -29,8 +31,7 @@
   //when SUBMIT is clicked, save inputs into variables
   $("#submitbtn").click(function(event){
    
-    var email = $("#email").val().trim();
-    var password = $("#password").val().trim();
+   
     var city = $("#city").val().trim();
     var keyword = $("#keyword").val().trim();
     var actor = $("#actor").val().trim();

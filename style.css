@@ -1,0 +1,141 @@
+/*body {
+    background: url("netflixBackground.jpg");
+}*/
+
+#sign-in{
+	float: right;
+	background-color: #6a1b9a;
+	margin-right: 40px;
+	margin-top: -40px;
+}
+
+.sign-up2{
+	margin-left: 30px;
+}
+
+#infoWrap{
+	text-align: center;
+}
+
+#container{
+	background-color: black;
+}
+#login{
+	float: right;
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+	z-index: 0;
+}
+
+#slider{
+	height: 450px;
+}
+
+#page-footer{
+	background-color: darkred;
+}
+
+#section-white{}
+
+ .parallax-container {
+      height: 520px;
+ }
+
+#label{
+	font-size: 16px;
+	margin-left: -12px;
+}
+
+#shows{
+	font-family: ‘PT Sans’, sans-serif;
+}
+
+#signup{
+	float: left;
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+}
+
+#header{
+	clear: both;
+}
+
+.slider{
+	background-color: black;
+}
+
+nav.nav-extended{
+	height: 250px;
+	background-color: darkred;
+	margin-top: 0px;
+}
+
+nav.nav-extended2{
+	height: 170px;
+	background-color: darkred;
+	margin-top: -40px;
+}
+
+.form{
+	background-color: grey;
+}
+
+#title{
+	text-align: center;
+	position: relative;
+}
+
+#picks{
+	font-family: ‘Fjalla One’, sans-serif;
+	text-align: center;
+	color: white;
+}
+
+
+#button1{
+	float: left;
+	background-color: #6a1b9a;
+}
+
+#sign-up{
+	float: left;
+	background-color: #6a1b9a;
+}
+
+.text{
+	color: white;
+}
+
+.carousel-item-custom {
+	width: calc(100vw/5) !important;
+	height: calc(100vw/5) !important;
+}
+
+#logo1{
+	font-family: ‘Quantico’, sans-serif;
+	color: red;
+	font-size: 70px;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+#holder{
+		margin-left: 20px;
+		position: relative;
+}
+
+.carousel{
+ position: relative;
+ width: 100%;
+}
+
+div.carousel.initialized{
+	position: relative;
+	width: 100%;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> refs/remotes/origin/master

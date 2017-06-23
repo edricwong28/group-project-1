@@ -13,6 +13,14 @@
 
   var database = firebase.database();
 
+  var email = "myemail@email.com";
+  var password = "12345";
+  
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+   console.log(error.code);
+   console.log(error.message);
+});
+
 
   
   //when SUBMIT is clicked, save inputs into variables
@@ -30,83 +38,7 @@
     console.log(keyword);
     console.log(actor);
     
-    //sign in with email and password
-      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-
-        //handle errors here
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        if(errorCode === "auth/wrong-password") {
-          alert("Wrong password.");
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-
-      });
-
-    }
-  }
-
-
-  //handles the sign up button press
-  function signUp() {
-    var email = $("#email").val().trim();
-    var password = $("#password").val().trim();
-    if(email.length < 4) {
-      alert("Please enter an email address.");
-      return;
-    }
-    if (password.length < 4) {
-      alert("Please enter a password.");
-      return;
-    }
-
-    //sign in with email and password
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-    
-    //handle errors
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    if (errorCode == "auth/weak-password") {
-      alert("The password is too weak. ");
-    } else {
-      alert(errorMessage);
-    }
-
-    console.log(error);
-
-    });
-  }
-
-  //Send email verification to user
-
-  function sendEmailVerification() {
-
-    firebase.auth().currentUser.sendEmailVerification().then(function() {
-      alert("Email Verification Sent!");
-    });
-  }
-
-  //reset password
-  function sendPasswordReset() {
-    var email = $("#email").val().trim();
-
-    firebase.auth().sendPasswordResetEmail(email).then(function() {
-      alert("Password Reset Email Sent!");
-    }).catch(function(error) {
-      //handle errors
-      var errorCode = error.code;
-      var errorMessage = error.message;
-
-      if (errorCode == "auth/invalid-email") {
-        alert(errorMessage);
-      }
-      console.log(error);
-    });
-  }
-
+   
     // create "temporary" object for holding user's data
     newObject = {
       email: email,

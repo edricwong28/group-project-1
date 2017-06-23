@@ -1,35 +1,32 @@
 <!DOCTYPE <html></html>
 <head>
-	<title>Netflix Roulette</title>
-	<html lang="en-us">
+<title>Netflix Roulette</title>
+<html lang="en-us">
 	
-		<meta charset="UTF-8">
-		<link href="reset.css">
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-		<!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
-		<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-		<!-- <script src="assets/javascript/script.js"></script> -->
-		<!-- <script src="assets/javascript/weatherScript.js"></script> -->
-		<!-- <script src="assets/javascript/netFlixscript.js"></script> -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-		<link rel="stylesheet" href="assets/css/style.css">
-		<!--  GOOGLE FONTS -->
-		<link href=“https://fonts.googleapis.com/css?family=Oswald|Quantico|PT+Sans|Fjalla+One rel=“stylesheet”>
+	<meta charset="UTF-8">
+	<link href="reset.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+	<!-- <script src="assets/javascript/script.js"></script> -->
+	<!-- <script src="assets/javascript/weatherScript.js"></script> -->
+	<!-- <script src="assets/javascript/netFlixscript.js"></script> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!--  GOOGLE FONTS -->
+	<link href=“https://fonts.googleapis.com/css?family=Oswald|Quantico|PT+Sans|Fjalla+One rel=“stylesheet”>
+	
+	
+</head>
+<body>
 
-		
-		
-	</head>
-	<body>
 		<nav class="nav-extended2">
-			<div class="nav-wrapper">
-				<br>
-				<h5 id="logo1"><b>NETFLIX ROULETTE</b></h5>
-				
-			</div>
+			<br>
+			<h5 id="logo1"><b>NETFLIX ROULETTE</b></h5>
 		</nav>
-		<!--Sign In/ Log In form -->
+
 		<div class="container white z-depth-0">
 	<ul class="tabs red">
 		<li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
@@ -87,187 +84,134 @@
 		</form>
 	</div>
 </div>
-		
-		<!--   <div id="modal1" class="modal">
+
+
+	
+	
+	<!--   <div id="modal1" class="modal">
 					<div class="modal-content">
-							<h4>Modal Header</h4>
-							<p>A bunch of text</p>
+								<h4>Modal Header</h4>
+								<p>A bunch of text</p>
 					</div>
 						<div class="modal-footer">
-								<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+									<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
 						</div>
+	</div>
+	-->
+	
+	<!-- FIRST PARALLAX IMAGE -->
+	<div class="parallax-container">
+		<div class="parallax"><img src="netflixBackground.jpg"></div>
+	</div>
+	
+	<h1 id="picks">Your Picks...</h1>
+	<!-- Results-->
+	<div row="movie-row">
+		<div id="main-carousel" class="carousel">
+			<!-- <a class="carousel-item carousel-item-custom" href="#one!"></a> -->
 		</div>
-		-->
+		<br><br><br>
+		<table class = "container" id='table'>
+			<thead>
+				<tr>
+					<th>City</th>
+					<th>Temperature</th>
+					<th>Weather</th>
+					<th>Description</th>
+					<th>Icon</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="1"></td>
+					<td id="2"></td>
+					<td id="3"></td>
+					<td id="4"></td>
+					<td id="5"></td>
+				</tr>
+			</tbody>
+		</table>
 		
-		<!-- FIRST PARALLAX IMAGE -->
-		<div class="parallax-container">
-			<div class="parallax"><img src="netflixBackground.jpg"></div>
+		<div id="infoWrap">
+			<div class="temp"></div>
+			<div class="city"></div>
+			<div class="main"></div>
+			<div class="description"></div>
+			<div class="icon"></div>
+			<div class="show"></div>
+			<div id="results"></div>
 		</div>
-		
-				<h1 id="picks">Your Picks...</h1>
+		<!-- </div> -->
+	</div>
 
-				<!-- Results-->
-			<div row="movie-row">
-				<div id="main-carousel" class="carousel">
-						<!-- <a class="carousel-item carousel-item-custom" href="#one!"></a> -->
+	<br>
 
+	<!-- Entry Form -->
+	<div class="section white">
+		<div class="row container">
+			<section id="section" class="container">
+				<div class="input-field">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<label for="email" style= "font-size: 24px">Email</label>
+									<input class="form-control" id="email" type="text">
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-
-				<br><br><br>
-
-			<table class = "container" id='table'>
-                <thead>
-                  <tr>
-                    <th>City</th>
-                    <th>Temperature</th>
-                    <th>Weather</th>
-                    <th>Description</th>
-                    <th>Icon</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td id="1"></td>
-                    <td id="2"></td>
-                    <td id="3"></td>
-                    <td id="4"></td>
-                    <td id="5"></td>
-                  </tr>
-                </tbody>
-              </table>
-
-					
-					<div id="infoWrap">
-						<div class="temp"></div>
-						<div class="city"></div>
-						<div class="main"></div>
-						<div class="description"></div>
-						<div class="icon"></div>
-						<div class="show"></div>
-						<div id="results"></div>
-					</div>	
-				<!-- </div> -->
-			</div>
+				<div class="input-field">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<label for="password" style= "font-size: 24px">Password</label>
+									<input class="form-control" id="password" type="text">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="input-field">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<label for="city" style= "font-size: 24px">City</label>
+									<input class="form-control" id="city" type="text">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="input-field">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<label for="actor" style= "font-size: 24px">Actor</label>
+									<input class="form-control" id="actor" type="text">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				
 				<br>
-				<!-- Entry Form -->
-		<div class="section white">
-			<div class="row container">
-				<section id="section" class="container">
-					<div class="input-field">
-						<div class="row">
-							<form class="col s12">
-								<div class="row">
-									<div class="input-field col s12">	
-										<label for="email" style= "font-size: 24px">Email</label>
-										<input class="form-control" id="email" type="text">
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="input-field">
-						<div class="row">
-							<form class="col s12">
-								<div class="row">
-									<div class="input-field col s12">
-										<label for="password" style= "font-size: 24px">Password</label>
-										<input class="form-control" id="password" type="text">
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="input-field">
-						<div class="row">
-							<form class="col s12">
-								<div class="row">
-									<div class="input-field col s12">
-										<label for="city" style= "font-size: 24px">City</label>
-										<input class="form-control" id="city" type="text">
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					
-
-						<div class="input-field">
-							<div class="row">
-								<form class="col s12">
-									<div class="row">
-										<div class="input-field col s12">
-											<label for="keyword" style= "font-size: 24px">Keyword</label>
-											<input class="form-control" id="keyword" type="text">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-
-						<div class="input-field">
-							<div class="row">
-								<form class="col s12">
-									<div class="row">
-										<div class="input-field col s12">
-											<label for="actor" style= "font-size: 24px">Actor</label>
-											<input class="form-control" id="actor" type="text">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-						
-						
-						
-						
-						<br>
-						<button id= "submitbtn" class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
-
-
-					</section>
-				</div>
-			</div>
-			
-			<!-- SECOND PARALLAX IMAGE -->
-			<div class="parallax-container">
-				<div class="parallax"><img src="netflixBackground.jpg"></div>
-			</div>
-			
-			
-			<!-- 			<container class="form">
-			<div class="sign-up2">
-				<h3>Sign-Up</h3>
-			</div>
-			<div class="row">
-					<form class="col s12">
-							<div class="row">
-									<div class="input-field col s6">
-											<input placeholder="First Name" id="first_name" type="text" class="validate" required>
-											<label for="first_name">First Name</label>
-									</div>
-									<div class="input-field col s6">
-											<input placeholder="Last Name" id="last_name" type="text" class="validate" required>
-											<label for="last_name">Last Name</label>
-									</div>
-							</div>
-							<div class="row">
-									<div class="input-field col s12">
-											<input id="password" type="password" class="validate" required>
-											<label for="password">Password</label>
-									</div>
-							</div>
-							<div class="row">
-									<div class="input-field col s12">
-											<input id="email" type="email" class="validate" pattern=".{5,10}" required title="Password must be between 5 and 10 characters">
-											<label for="email">Email</label>
-									</div>
-									<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
-							</div>
-					</div>
-			</form>
+				<button id= "submitbtn" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+			</section>
 		</div>
-		</container> -->
-		
+	</div>
+	
+	<!-- SECOND PARALLAX IMAGE -->
+	<div class="parallax-container">
+		<div class="parallax"><img src="netflixBackground.jpg"></div>
+	</div>
+	
+	
 		<!-- FOOTER -->
 		<footer class="page-footer" id="page-footer">
 			<div class="container">
@@ -293,7 +237,7 @@
 				</div>
 			</div>
 		</footer>
-		<!-- JavaScript -->
-		<script src="assets/javascript/script.js"></script>
-	</body>
+<!-- JavaScript -->
+<script src="assets/javascript/script.js"></script>
+</body>
 </html>

@@ -13,7 +13,11 @@
 
   var database = firebase.database();
 
-// handles the sign in button press
+
+  
+  //when SUBMIT is clicked, save inputs into variables
+  $("#submitbtn").click(function(event){
+    // handles the sign in button press
   function signIn () {
     if (firebase.auth().currentUser) {
 
@@ -107,9 +111,6 @@
     });
   }
 
-  
-  //when SUBMIT is clicked, save inputs into variables
-  $("#submitbtn").click(function(event){
 
     var email = $("#email").val().trim();
     var password = $("#password").val().trim();

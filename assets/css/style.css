@@ -1,18 +1,6 @@
 /*body {
     background: url("netflixBackground.jpg");
 }*/
-h5
-{
-	font-weight: 400;
-}
-
-.container
-{
-	margin-top: 80px;
-	width: 400px;
-	height: 700px;
-}
-
 .tabs .indicator
 {
 	background-color: #e0f2f1;
@@ -69,6 +57,7 @@ h5
 	position: absolute;
 }
 
+
 #sign-in{
 	float: right;
 	background-color: #6a1b9a;
@@ -84,16 +73,14 @@ h5
 	text-align: center;
 }
 
+.nav-wrapper{
+	height: 400px;
+}
+
 #container{
 	background-color: black;
 }
-/* #login{
-	float: right;
-	border-style: solid;
-	border-width: 2px;
-	border-color: blue;
-	z-index: 0;
-} */
+
 
 #slider{
 	height: 450px;
@@ -118,12 +105,12 @@ h5
 	font-family: ‘PT Sans’, sans-serif;
 }
 
-/* #signup{
+#signup{
 	float: left;
 	border-style: solid;
 	border-width: 2px;
 	border-color: blue;
-} */
+}
 
 #header{
 	clear: both;
@@ -157,7 +144,7 @@ nav.nav-extended2{
 #picks{
 	font-family: ‘Fjalla One’, sans-serif;
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 
@@ -205,8 +192,3 @@ nav.nav-extended2{
 div.carousel.initialized{
 	position: relative;
 	width: 100%;
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> refs/remotes/origin/master

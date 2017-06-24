@@ -13,104 +13,90 @@
 
   var database = firebase.database();
   
-this.firebaseToken = document.querySelector("#firebase-token");
-this.firebaseToken.innerHTML = "Welcome !";
+              //when SUBMIT is clicked, save inputs into variables______________________________________________________________________________________
+              $("#submitbtn").click(function(event){
 
 
-// User SignUp
-function authRegister(event) {
-  event.preventDefault();
-  var registerForm = $("form[name='registerForm']");
-  var reg_email = registerForm.find('#email').val();
-  var reg_password = registerForm.find('#password').val();
-
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(reg_email, reg_password)
-    .then(function () {
-      this.firebaseToken.innerHTML = "Registered successfully !";
-    })
-    .catch(function(err) {
-      alert(err.message);
-    })
-}
+                var city = $("#city").val().trim();
+                var actor = $("#actor").val().trim();
 
 
-// User SignIn
-function authLogin(event) {
-  event.preventDefault();
-  var loginForm = $("form[name='loginForm']");
-  var log_email = loginForm.find('#login_email').val();
-  var log_password = loginForm.find('#login_password').val();
+                console.log(city);
+                console.log(actor);
 
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(log_email, log_password)
-    .then(function () {
-      this.firebaseToken.innerHTML = "Sign-in Successful !";
-      console.log('sign in successful !');
-      // outputFirebaseData();
-    })
-    .catch(function(err) {
-      alert(err.message);
-    });
-}
+                // create "temporary" object for holding user's data
+                newObject = {
+                  city: city,
+                  actor: actor
+                };
 
-function outputFirebaseData() {
-  this.firebaseToken.innerHTML = "Hello world";
-}
+                // Uploads  data to the database, this will "trigger" the "child_added" event
+                database.ref().push(newObject);
 
 
+                //Clears input boxes;
+                  $("#city").val("");
+                  $("#actor").val("");
+
+              getflix();
+            });
+
+          //END OF SUBMIT BUTTON FOR ROULETTE
+
+          //SIGNUP BUTTON___________________________________________________________________________________________________________________________
+          $("#signupbtn").click(function(event){
+
+            var email = $("#email").val().trim();
+            var password = $("#password").val().trim();
+           
+            newObject = {
+              email: email,
+              password: password
+            };
+
+              console.log(email);
+              console.log(password);
+
+            // Uploads  data to the database, this will "trigger" the "child_added" event
+            database.ref().push(newObject);
+
+              //Clears input boxes
+              $("#email").val("");
+              $("#password").val("");
+
+              authRegister();
+            });
+
+              //END OF SIGNUP BUTTON
+
+              //SIGNIN BUTTON___________________________________________________________________________________________________________________________
+              $("#signinbtn").click(function(event){
+
+                 var email = $("#login_email").val().trim();
+                 var password = $("#login_password").val().trim();
+
+                  newObject = {
+                    email: email,
+                    password: password
+                  };
+
+                 database.ref().push(newObject);
+
+                  $("#login_email").val("");
+                  $("#login_password").val("");
+
+                authLogin();
+              });
   
-  //when SUBMIT is clicked, save inputs into variables
-  $("#submitbtn").click(function(event){
-   
-   
-    var city = $("#city").val().trim();
-    var keyword = $("#keyword").val().trim();
-    var actor = $("#actor").val().trim();
-
-    console.log(email);
-    console.log(password);
-    console.log(city);
-    console.log(keyword);
-    console.log(actor);
-    
-   
-    // create "temporary" object for holding user's data
-    newObject = {
-      email: email,
-      password: password,
-      city: city,
-      keyword: keyword,
-      actor: actor
-    };
-
-    // Uploads  data to the database, this will "trigger" the "child_added" event
-    database.ref().push(newObject);
-
-    alert("success!");
-
-    //Clears input boxes
-      $("#email").val("");
-      $("#password").val("");
-      $("#city").val("");
-      $("#keyword").val("");
-      $("#actor").val("");
-
-  getflix();
-
-  
-
-  });
 
     //MATERIALIZE SCRIPTS
   $(document).ready(function(){
       // $('.carousel').carousel({dist:0});
+      $('.modal').modal();
       $('.parallax').parallax();
       Materialize.updateTextFields();
       $('select').material_select();
-      // $('.carousel.carousel-slider').carousel({fullWidth: true});
+      // $('.carousel.carousel-main').carousel({fullWidth: true});
       // $('.slider').slider();        
       // $('select').material_select('destroy');
   });
@@ -151,22 +137,25 @@ function outputFirebaseData() {
        r1 = r1[0];
       //r2[0] is pointing to the "parent" array, which holds mulipltle objects
        r2 = r2[0];
+       r1.main.temp = ((r1.main.temp) * 9/5) - 459.67;
 
-      $("#1").html(r1.name);
-      $("#2").html(r1.main.temp);
-      $("#3").html(r1.weather[0].main);
-      $("#4").html(r1.weather[0].description);
-             //FOR WEATHER ICON IMAGE TO DISPLAY
-       var iconCode = r1.weather[0].icon;
-       var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
-       var icon = $("<img>").attr("src", iconURL);
-      $("#5").html(icon);
+
+       //FOR WEATHER ICON IMAGE TO DISPLAY
+         var iconCode = r1.weather[0].icon;
+         var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+         var icon = $("<img>").attr("src", iconURL);
+
+         // $("#weatherTable > tbody").append("<tr><td>" + r1.name + "</td> <td>" + r1.main.temp + "</td> <td>" +
+         //         r1.weather[0].main + "</td><td>" + r1.weather[0].description + "</td><td>" + icon + "</td></tr>");
+
+        $("#1").html(r1.name);
+        $("#2").html(r1.main.temp +" °F");
+        $("#3").html(r1.weather[0].main);
+        $("#4").html(r1.weather[0].description);
+        $("#5").html(icon);
+        
+
       
-      // $(".show").append(r2[0].show_title);
-      // $(".show").append(r2[1].show_title);
-      // $(".show").append(r2[2].show_title);
-      // $(".show").append(r2[3].show_title);
-      // $(".show").append(r2[4].show_title);
 
       console.log(r1.main.temp);
       console.log(r1.weather[0].main);
@@ -184,7 +173,7 @@ function outputFirebaseData() {
 
           for(i=0; i < r2.length; i++){
 
-             if(r1.weather[0].main == "Clear" && (r2[i].category == "Action & Adventure" || r2[i].category == "Comedies")){
+             if(r1.weather[0].main == "Clear" && (r2[i].category == "Action & Adventure" || r2[i].category == "Comedies" || r2[i].category == "Independent Movies"  || r2[i].category == "Sports" )){
 
                 var results = document.getElementById("results")
                 var newDiv = document.createElement("div")
@@ -194,9 +183,11 @@ function outputFirebaseData() {
                 var img = $("<img>").attr("src", imgURL);
 
                 newDiv.innerHTML = r2[i].show_title;
-
+                $("#results").prepend(newDiv);
+                
                 imgDiv.append(img);
                 $('#main-carousel').append(imgDiv);
+                
 
                 // $(".carousel-item").prepend(img);
                 // $(".carousel").prepend(imgDiv);
@@ -205,37 +196,40 @@ function outputFirebaseData() {
    
               }
 
-              else if((r1.weather[0].main == "Clouds" || r1.weather[0].main == "Haze") && (r2[i].category == "Dramas" || r2[i].category == "Thrillers")){
+              else if((r1.weather[0].main == "Clouds" || r1.weather[0].main == "Haze" || r1.weather[0].main == "Mist") && (r2[i].category == "Dramas" || r2[i].category == "Thrillers" || r2[i].category == "TV Shows")){
                 var results = document.getElementById("results")
                 var newDiv = document.createElement("div")
+
                 var imgURL = r2[i].poster;
+                var imgDiv = $('<a id="imgDiv" class="carousel-item carousel-item-custom">');
                 var img = $("<img>").attr("src", imgURL);
 
                 newDiv.innerHTML = r2[i].show_title;
-
-                // results.appendChild(newDiv);
-
-                $("#imgCarousel").prepend(img);
                 $("#results").prepend(newDiv);
+
+                imgDiv.append(img);
+                $('#main-carousel').append(imgDiv);
+         
                 
 
               }
 
-              else if((r1.weather[0].main == "Rain" || r1.weather[0].main == "Thunderstorm") && (r2[i].category == "Oscar-winning Movies" || r2[i].category == "Sci-Fi & Fantasy" || r2[i].category == "Faith & Spirituality")){
-                var results = document.getElementById("results");
-                var newDiv = document.createElement("div");
+              else if((r1.weather[0].main == "Rain" || r1.weather[0].main == "Drizzle" || r1.weather[0].main == "Thunderstorm" || r1.weather[0].main == "Snow") && 
+                (r2[i].category == "Oscar-winning Movies" || r2[i].category == "Sci-Fi & Fantasy" || r2[i].category == "Faith & Spirituality" || r2[i].category == "Documentaries" || r2[i].category == "Classic Movies" || r2[i].category == "Children & Family" || r2[i].category == "Romance" || r2[i].category == "Anime")){
+                
+                var results = document.getElementById("results")
+                var newDiv = document.createElement("div")
+
                 var imgURL = r2[i].poster;
+                var imgDiv = $('<a id="imgDiv" class="carousel-item carousel-item-custom">');
                 var img = $("<img>").attr("src", imgURL);
 
                 newDiv.innerHTML = r2[i].show_title;
-
-                // results.appendChild(newDiv);
-
-                $("#imgCarousel").prepend(img);
                 $("#results").prepend(newDiv);
                 
+                imgDiv.append(img);
+                $('#main-carousel').append(imgDiv);
                 
-
               }
 
           }
@@ -248,111 +242,45 @@ function outputFirebaseData() {
     }
 
 
-  // // Initialize Firebase
-  // var config = {
-  //   apiKey: "AIzaSyAvYUBg47CmdjD-J_-XYOcD_Xi2ekHg7lI",
-  //   authDomain: "netflix-group-project-1.firebaseapp.com",
-  //   databaseURL: "https://netflix-group-project-1.firebaseio.com",
-  //   projectId: "netflix-group-project-1",
-  //   storageBucket: "netflix-group-project-1.appspot.com",
-  //   messagingSenderId: "179076092851"
-  // };
+// User SignUp
+function authRegister(event) {
   
-  // firebase.initializeApp(config);
+  var registerForm = $("form[name='registerForm']");
+  var reg_email = newObject.email;
+  var reg_password = newObject.password;
 
-  // var database = firebase.database();
+  // reg_email = JSON.stringify(reg_email);
+  // reg_password = JSON.stringify(reg_password);
 
-  // // handles the sign in button press
-  // function signIn () {
-  //   if (firebase.auth().currentUser) {
-
-  //     firebase.auth().signOut();
-  //   } else {
-  //     var email = $("#email").val().trim();
-  //     var password = $("#password").val().trim();
-  //     if (email.length < 4) {
-  //       alert("Please enter an email address. ");
-  //       return;
-  //     }
-  //     if (password.length < 4) {
-  //       alert("Please enter a password. ");
-  //       return;
-  //     }
-
-  //     //sign in with email and password
-  //     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-
-  //       //handle errors here
-  //       var errorCode = error.code;
-  //       var errorMessage = error.message;
-
-  //       if(errorCode === "auth/wrong-password") {
-  //         alert("Wrong password.");
-  //       } else {
-  //         alert(errorMessage);
-  //       }
-  //       console.log(error);
-
-  //     });
-
-  //   }
-  // }
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(reg_email, reg_password)
+    .then(function () {
+      this.firebaseToken.innerHTML = "Registered successfully !";
+    })
+    .catch(function(err) {
+      alert(err.message);
+    })
+}
 
 
-  // //handles the sign up button press
-  // function signUp() {
-  //   var email = $("#email").val().trim();
-  //   var password = $("#password").val().trim();
-  //   if(email.length < 4) {
-  //     alert("Please enter an email address.");
-  //     return;
-  //   }
-  //   if (password.length < 4) {
-  //     alert("Please enter a password.");
-  //     return;
-  //   }
+// User SignIn
+function authLogin(event) {
+  
+  var loginForm = $("form[name='loginForm']");
+  var log_email = loginForm.find('#login_email').val();
+  var log_password = loginForm.find('#login_password').val();
 
-  //   //sign in with email and password
-  //   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-    
-  //   //handle errors
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   if (errorCode == "auth/weak-password") {
-  //     alert("The password is too weak. ");
-  //   } else {
-  //     alert(errorMessage);
-  //   }
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(log_email, log_password)
+    .then(function () {
+      this.firebaseToken.innerHTML = "Sign-in Successful !";
+      console.log('sign in successful !');
+      // outputFirebaseData();
+    })
+    .catch(function(err) {
+      alert(err.message);
+    })
 
-  //   console.log(error);
-
-  //   });
-  // }
-
-  // //Send email verification to user
-
-  // function sendEmailVerification() {
-
-  //   firebase.auth().currentUser.sendEmailVerification().then(function() {
-  //     alert("Email Verification Sent!");
-  //   });
-  // }
-
-  // //reset password
-  // function sendPasswordReset() {
-  //   var email = $("#email").val().trim();
-
-  //   firebase.auth().sendPasswordResetEmail(email).then(function() {
-  //     alert("Password Reset Email Sent!");
-  //   }).catch(function(error) {
-  //     //handle errors
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-
-  //     if (errorCode == "auth/invalid-email") {
-  //       alert(errorMessage);
-  //     }
-  //     console.log(error);
-  //   });
-  // }
-
+  }

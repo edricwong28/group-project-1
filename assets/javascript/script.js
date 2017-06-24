@@ -70,7 +70,7 @@
               //END OF SIGNUP BUTTON
 
               //SIGNIN BUTTON___________________________________________________________________________________________________________________________
-              $("#signinbtn").click(function(event){
+              $("#loginbtn").click(function(event){
 
                  var email = $("#login_email").val().trim();
                  var password = $("#login_password").val().trim();
@@ -246,8 +246,8 @@
 function authRegister(event) {
   
   var registerForm = $("form[name='registerForm']");
-  var reg_email = newObject.email;
-  var reg_password = newObject.password;
+  var reg_email = registerForm.find('#email').val();
+  var reg_password = registerForm.find('#password').val();
 
   // reg_email = JSON.stringify(reg_email);
   // reg_password = JSON.stringify(reg_password);

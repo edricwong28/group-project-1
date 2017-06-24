@@ -43,31 +43,31 @@
 
           //END OF SUBMIT BUTTON FOR ROULETTE
 
-          //SIGNUP BUTTON___________________________________________________________________________________________________________________________
-          $("#signupbtn").click(function(event){
+              //SIGNUP BUTTON___________________________________________________________________________________________________________________________
+              $("#signupbtn").click(function(event){
 
-            var email = $("#email").val().trim();
-            var password = $("#password").val().trim();
-           
-            newObject = {
-              email: email,
-              password: password
-            };
+                var email = $("#email").val().trim();
+                var password = $("#password").val().trim();
+               
+                newObject2 = {
+                  email: email,
+                  password: password
+                };
 
-              console.log(email);
-              console.log(password);
+                  console.log(email);
+                  console.log(password);
 
-            // Uploads  data to the database, this will "trigger" the "child_added" event
-            database.ref().push(newObject);
+                // Uploads  data to the database, this will "trigger" the "child_added" event
+                database.ref().push(newObject2);
 
-              //Clears input boxes
-              $("#email").val("");
-              $("#password").val("");
+                  //Clears input boxes
+                  $("#email").val("");
+                  $("#password").val("");
 
-              authRegister();
-            });
+                  authRegister();
+                });
 
-              //END OF SIGNUP BUTTON
+           //END OF SIGNUP BUTTON
 
               //SIGNIN BUTTON___________________________________________________________________________________________________________________________
               $("#loginbtn").click(function(event){
@@ -75,12 +75,12 @@
                  var email = $("#login_email").val().trim();
                  var password = $("#login_password").val().trim();
 
-                  newObject = {
+                  newObject3 = {
                     email: email,
                     password: password
                   };
 
-                 database.ref().push(newObject);
+                 database.ref().push(newObject3);
 
                   $("#login_email").val("");
                   $("#login_password").val("");
@@ -244,7 +244,7 @@
 
 // User SignUp
 function authRegister(event) {
-  
+  event.preventDefault();
   var registerForm = $("form[name='registerForm']");
   var reg_email = registerForm.find('#email').val();
   var reg_password = registerForm.find('#password').val();
@@ -266,7 +266,7 @@ function authRegister(event) {
 
 // User SignIn
 function authLogin(event) {
-  
+  event.preventDefault();
   var loginForm = $("form[name='loginForm']");
   var log_email = loginForm.find('#login_email').val();
   var log_password = loginForm.find('#login_password').val();
